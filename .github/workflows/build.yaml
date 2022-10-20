@@ -33,5 +33,5 @@ jobs:
           echo systemctl enable sddm >> releng/airootfs/root/customize_airootfs.sh
       - name: Build ISO
         run: |
-          mkarchiso -v -w iso/ releng/
+          sudo mkarchiso -v -w iso/ releng/
         
