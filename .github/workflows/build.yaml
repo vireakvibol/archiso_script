@@ -1,0 +1,12 @@
+name: build
+on: [push, pull_request]
+
+jobs:
+  iso_build:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+    steps:
+      - name: Install requirement
+        run: |
+          pacman -S archiso --noconfirm
