@@ -15,9 +15,7 @@ jobs:
           pacman -S archiso --noconfirm
       - name: Create installation media source
         run: |
-          ls /usr/share/archiso/configs/releng
           cp -r /usr/share/archiso/configs/releng .
-          ls .
       - name: Customize package to install script
         run: |
           echo xorg >> releng/packages.x86_64
@@ -35,6 +33,5 @@ jobs:
           echo systemctl enable sddm >> releng/airootfs/root/customize_airootfs.sh
       - name: Build ISO
         run: |
-          cd releng
-          ./build.sh -v
+          mkarchiso -v -w releng/ .
         
