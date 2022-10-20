@@ -11,6 +11,7 @@ jobs:
         run: |
           pacman -Sy
       - name: Install requirement
+        run: |
           pacman -S archiso --noconfirm
       - name: Create installation media source
         run: |
