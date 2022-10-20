@@ -15,7 +15,9 @@ jobs:
           pacman -S archiso --noconfirm
       - name: Create installation media source
         run: |
+          ls /usr/share/archiso/configs/releng
           cp -r /usr/share/archiso/configs/releng .
+          ls .
       - name: Customize package to install script
         run: |
           echo xorg >> releng/packages.x86_64
