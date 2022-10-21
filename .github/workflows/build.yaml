@@ -43,4 +43,4 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           localPath: './iso'
-          remotePath: '${{ secrets.SSH_PATH }}
+          remotePath: ${{ secrets.SSH_PATH }}
