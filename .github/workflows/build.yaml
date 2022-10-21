@@ -42,5 +42,5 @@ jobs:
             username: ${{ secrets.SSH_USERNAME }}
             password: ${{ secrets.SSH_PASSWORD }}
             remote_path: ${{ secrets.SSH_PATH }}
-            local_path: '.iso/*'
+            local_path: 'iso/*'
             sftp_only: true
