@@ -17,21 +17,21 @@ jobs:
       - name: Create installation media source
         run: |
           cp -r /usr/share/archiso/configs/releng .
-      - name: Customize package to install script
-        run: |
-          echo xorg >> releng/packages.x86_64
-          echo plasma-desktop >> releng/packages.x86_64
-          echo plasma-pa >> releng/packages.x86_64
-          echo plasma-nm >> releng/packages.x86_64
-          echo sddm >> releng/packages.x86_64
-          echo sddm-kcm >> releng/packages.x86_64
-          echo dolphin >> releng/packages.x86_64
-          echo konsole >> releng/packages.x86_64
-          echo chromium >> releng/packages.x86_64
-      - name: Customize initial boot script
-        run: |
-          echo systemctl set-default graphical.target >> releng/airootfs/root/customize_airootfs.sh
-          echo systemctl enable sddm >> releng/airootfs/root/customize_airootfs.sh
+      # - name: Customize package to install script
+      #   run: |
+      #     echo xorg >> releng/packages.x86_64
+      #     echo plasma-desktop >> releng/packages.x86_64
+      #     echo plasma-pa >> releng/packages.x86_64
+      #     echo plasma-nm >> releng/packages.x86_64
+      #     echo sddm >> releng/packages.x86_64
+      #     echo sddm-kcm >> releng/packages.x86_64
+      #     echo dolphin >> releng/packages.x86_64
+      #     echo konsole >> releng/packages.x86_64
+      #     echo chromium >> releng/packages.x86_64
+      # - name: Customize initial boot script
+      #   run: |
+      #     echo systemctl set-default graphical.target >> releng/airootfs/root/customize_airootfs.sh
+      #     echo systemctl enable sddm >> releng/airootfs/root/customize_airootfs.sh
       - name: Build ISO
         run: |
           mkarchiso -v -w ./releng/ -o iso ./releng
